@@ -7,3 +7,11 @@
 class Solution:
     def hammingDistance(self, x: int, y: int) -> int:
         return bin(x^y).count('1')
+
+        # Solution 2
+        x = x ^ y
+        y = 0
+        while x:
+            y += 1
+            x = x & (x - 1)
+        return y
