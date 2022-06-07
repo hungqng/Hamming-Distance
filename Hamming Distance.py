@@ -15,3 +15,9 @@ class Solution:
             y += 1
             x = x & (x - 1)
         return y
+        
+        # Solution 3
+        res, t = 0, x^y
+        while t:
+            t, res = t & (t-1), res + 1
+        return res
